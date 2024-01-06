@@ -17,7 +17,7 @@ func _physics_process(delta):
 	else:								#	%HappyBoo works if you right click the node and hit Access as Unique name, kinda seems like static variables?
 		%HappyBoo.play_idle_animation()
 	
-	const DAMAGE_RATE = 500.0
+	const DAMAGE_RATE = 15.0
 	var overlapping_enemies = %HurtBox.get_overlapping_bodies() #returns array of overlapping slimes
 	
 	if overlapping_enemies.size() > 0:
