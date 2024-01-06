@@ -1,34 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://22v8vjffogtt"]
+[gd_scene load_steps=5 format=3 uid="uid://22v8vjffogtt"]
 
+[ext_resource type="Script" path="res://survivors_game.gd" id="1_6ik1n"]
 [ext_resource type="PackedScene" uid="uid://bl73knbc041it" path="res://player.tscn" id="1_8py80"]
 [ext_resource type="PackedScene" uid="uid://744xchkjnls8" path="res://tree.tscn" id="2_vso55"]
-[ext_resource type="PackedScene" uid="uid://bo84hude4mbac" path="res://enemy.tscn" id="3_t4lb7"]
+
+[sub_resource type="Curve2D" id="Curve2D_4a0ox"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -398, -430, 0, 0, 0, 0, 2126, -434, 0, 0, 0, 0, 2126, 1314, 0, 0, 0, 0, -390, 1314, 0, 0, 0, 0, -397, -432)
+}
+point_count = 5
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_6ik1n")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -101
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_right = 1937.0
-offset_bottom = 1094.0
+offset_left = -18.0
+offset_top = -2.0
+offset_right = 1919.0
+offset_bottom = 1092.0
 color = Color(0.231373, 0.729412, 0.47451, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_8py80")]
 position = Vector2(774, 475)
 
-[node name="Enemy" parent="." instance=ExtResource("3_t4lb7")]
-position = Vector2(981, 480)
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-774, -475)
+curve = SubResource("Curve2D_4a0ox")
 
-[node name="Enemy2" parent="." instance=ExtResource("3_t4lb7")]
-position = Vector2(1181, 491)
-
-[node name="Enemy3" parent="." instance=ExtResource("3_t4lb7")]
-position = Vector2(1051, 736)
-
-[node name="Enemy4" parent="." instance=ExtResource("3_t4lb7")]
-position = Vector2(1264, 868)
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-398, -430)
+rotation = -0.00158478
 
 [node name="Tree" parent="." instance=ExtResource("2_vso55")]
 position = Vector2(270, 219)
@@ -40,10 +46,10 @@ position = Vector2(299, 534)
 position = Vector2(548, 791)
 
 [node name="Tree4" parent="." instance=ExtResource("2_vso55")]
-position = Vector2(1677, 609)
+position = Vector2(1646, 425)
 
 [node name="Tree5" parent="." instance=ExtResource("2_vso55")]
-position = Vector2(1546, 561)
+position = Vector2(1494, 505)
 
 [node name="Tree6" parent="." instance=ExtResource("2_vso55")]
 position = Vector2(1407, 251)
@@ -61,7 +67,13 @@ position = Vector2(895, 177)
 position = Vector2(471, 175)
 
 [node name="Tree11" parent="." instance=ExtResource("2_vso55")]
-position = Vector2(1583, 710)
+position = Vector2(1587, 683)
 
 [node name="Tree12" parent="." instance=ExtResource("2_vso55")]
-position = Vector2(1465, 647)
+position = Vector2(1422, 728)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
