@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://22v8vjffogtt"]
+
+[ext_resource type="PackedScene" uid="uid://bl73knbc041it" path="res://player.tscn" id="1_8py80"]
+[ext_resource type="PackedScene" uid="uid://744xchkjnls8" path="res://tree.tscn" id="2_vso55"]
+[ext_resource type="PackedScene" uid="uid://bo84hude4mbac" path="res://enemy.tscn" id="3_t4lb7"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -101
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1937.0
+offset_bottom = 1094.0
+color = Color(0.231373, 0.729412, 0.47451, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_8py80")]
+position = Vector2(774, 475)
+
+[node name="Enemy" parent="." instance=ExtResource("3_t4lb7")]
+position = Vector2(981, 480)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_t4lb7")]
+position = Vector2(1181, 491)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_t4lb7")]
+position = Vector2(1051, 736)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_t4lb7")]
+position = Vector2(1264, 868)
+
+[node name="Tree" parent="." instance=ExtResource("2_vso55")]
+position = Vector2(270, 219)
+
+[node name="Tree2" parent="." instance=ExtResource("2_vso55")]
+position = Vector2(299, 534)
+
+[node name="Tree3" parent="." instance=ExtResource("2_vso55")]
+position = Vector2(548, 791)
+
+[node name="Tree4" parent="." instance=ExtResource("2_vso55")]
+position = Vector2(1677, 609)
+
+[node name="Tree5" parent="." instance=ExtResource("2_vso55")]
+position = Vector2(1546, 561)
+
+[node name="Tree6" parent="." instance=ExtResource("2_vso55")]
+position = Vector2(1407, 251)
+
+[node name="Tree7" parent="." instance=ExtResource("2_vso55")]
+position = Vector2(1192, 216)
+
+[node name="Tree8" parent="." instance=ExtResource("2_vso55")]
+position = Vector2(211, 853)
+
+[node name="Tree9" parent="." instance=ExtResource("2_vso55")]
+position = Vector2(895, 177)
+
+[node name="Tree10" parent="." instance=ExtResource("2_vso55")]
+position = Vector2(471, 175)
+
+[node name="Tree11" parent="." instance=ExtResource("2_vso55")]
+position = Vector2(1583, 710)
+
+[node name="Tree12" parent="." instance=ExtResource("2_vso55")]
+position = Vector2(1465, 647)
