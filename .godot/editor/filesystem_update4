@@ -5,3 +5,4 @@ res://survivors_game.tscn
 res://enemy.tscn
 res://Bullet.gd
 res://bullet.tscn
+res://Enemy.gd
