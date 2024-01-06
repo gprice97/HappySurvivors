@@ -8,3 +8,5 @@ res://bullet.tscn
 res://Enemy.gd
 res://player.gd
 res://survivors_game.gd
+res://ScoreLabel.gd
+res://UserInterface.gd

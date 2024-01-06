@@ -1,4 +1,6 @@
 Label
+Control
+RichTextLabel
 ColorRect
 CanvasLayer
 Timer

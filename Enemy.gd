@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var health = 3
 
+signal enemy_died
 
 @onready var player = get_node("/root/Game/Player")
 
@@ -24,3 +25,4 @@ func take_damage():
 		smoke.global_position = %Slime.global_position #Placing the Smoke onto the position of the slime instead of the origin
 		get_parent().add_child(smoke) # adding this as a child of the "Game" Node instead of as a child of the "Enemy" Node
 									  # that way the smoke can still appear after we queue_free() the enemy on death
+		enemy_died.emit()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://22v8vjffogtt"]
+[gd_scene load_steps=6 format=3 uid="uid://22v8vjffogtt"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_6ik1n"]
 [ext_resource type="PackedScene" uid="uid://bl73knbc041it" path="res://player.tscn" id="1_8py80"]
 [ext_resource type="PackedScene" uid="uid://744xchkjnls8" path="res://tree.tscn" id="2_vso55"]
+[ext_resource type="Script" path="res://ScoreLabel.gd" id="4_2ii8v"]
 
 [sub_resource type="Curve2D" id="Curve2D_4a0ox"]
 _data = {
@@ -23,6 +24,15 @@ offset_top = -2.0
 offset_right = 1919.0
 offset_bottom = 1092.0
 color = Color(0.231373, 0.729412, 0.47451, 1)
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 117.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 31
+text = "Score: 0
+"
+script = ExtResource("4_2ii8v")
 
 [node name="Player" parent="." instance=ExtResource("1_8py80")]
 position = Vector2(774, 475)
