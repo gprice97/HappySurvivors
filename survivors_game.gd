@@ -1,5 +1,6 @@
 extends Node2D
 
+ 
 var player_score = 0
 
 func spawn_enemy():
@@ -21,3 +22,15 @@ func _on_player_health_depleted():
 func raise_score():
 	player_score += 100
 	%ScoreLabel.text = "Score: " + str(player_score)
+
+func _on_resume_button_pressed():
+	get_tree().paused = false
+	%PauseMenu.visible = false
+	
+
+func _input(event : InputEvent):
+	if(event.is_action_pressed("Menu")):
+		get_tree().paused = true
+		%PauseMenu.visible = true
+
+
